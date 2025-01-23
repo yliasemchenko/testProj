@@ -1,0 +1,134 @@
+@use './variables';
+
+.contacts {
+    padding: 0 0 90px 0;
+    position: relative;
+
+    &__wrapper {
+        width: 45%;
+        margin: 0 auto;
+
+        @media (min-width: 310px) and (max-width: 600px) {
+            width: 70%;
+        }
+    }
+
+    &__policy {
+        width: 45%;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+
+        input {
+            margin-right: 10px;
+        }
+    }
+
+
+
+    &__modal_btn {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 15px;
+    }
+}
+
+.required {
+    color: variables.$error-outline;
+    font-size: 15px;
+}
+
+.active {
+    background-color: variables.$error-color;
+    border: 0.5px solid variables.$error-outline;
+}
+
+.drop {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 10px 60px -8px variables.$error-color;
+    position: absolute;
+    transition: all 0.2s ease;
+    animation: moveAround 10s infinite ease-in-out;
+
+    &-1 {
+        height: 100px;
+        width: 100px;
+        top: -10%;
+        left: 20%;
+        z-index: -1;
+        animation-duration: 10s;
+        animation-delay: 5.5s;
+    }
+
+    &-2 {
+        height: 80px;
+        width: 80px;
+        bottom: 60%;
+        right: 15%;
+        z-index: -1;
+        animation-duration: 10s;
+        animation-delay: 2s;
+    }
+
+    &-3 {
+        height: 100px;
+        width: 100px;
+        bottom: 20%;
+        right: 3%;
+        z-index: -1;
+        animation-duration: 10s;
+        animation-delay: 0.5s;
+    }
+
+    &-4 {
+        height: 120px;
+        width: 120px;
+        top: -30%;
+        right: 10%;
+        z-index: -1;
+        animation-duration: 10s;
+        animation-delay: 8s;
+    }
+
+    &-5 {
+        height: 60px;
+        width: 60px;
+        bottom: 40%;
+        left: 10%;
+        z-index: -1;
+        animation-duration: 10s;
+        animation-delay: 12.5s;
+    }
+
+    @keyframes moveAround {
+        0% {
+            transform: translate(0%, 0%);
+        }
+
+        20% {
+            transform: translate(10%, -15%);
+        }
+
+        40% {
+            transform: translate(-8%, 25%);
+        }
+
+        60% {
+            transform: translate(12%, -20%);
+        }
+
+        80% {
+            transform: translate(-15%, 10%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+}

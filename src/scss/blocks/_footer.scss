@@ -1,0 +1,64 @@
+@use './variables';
+
+.footer {
+    background-color: variables.$error-outline;
+    padding: 100px 50px 50px 50px;
+    clip-path: polygon(100% 100%,  100% 10%,  0 50%, 0 100%);
+
+    @media (min-width: 310px) and (max-width: 600px) {
+        padding: 100px 10px 40px 10px;
+        clip-path: polygon(100% 100%,  100% 0%,  0 30%, 0 100%);
+    }
+
+    &__wrapper {
+        width: 100%;
+        display:flex;
+        align-items: end;
+        justify-content: end;
+        gap:20px;
+
+        @media (min-width: 310px) and (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__social,
+    &__call {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__social_links{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        font-weight: bold;
+        color: variables.$main-color;
+    }
+
+    &__link {
+
+        & i {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        text-align: center;
+    
+        &:hover {
+            color: variables.$error-color
+        }
+    }
+}
+

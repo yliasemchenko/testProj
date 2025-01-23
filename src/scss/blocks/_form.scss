@@ -1,0 +1,84 @@
+@use './variables';
+
+.modal, .contacts {
+    &__form {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 35px;
+
+        label {
+            display: block;
+            position: absolute;
+            top: -9px;
+            left: 12px;
+            height: 18px;
+            padding: 0 8px;
+            background-color: #fff;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+    }
+    &__input {
+        position: relative;
+        width: 100%;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        position: relative;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            resize: none;
+            padding: 20px;
+            font-size: 12px;
+
+            &:focus {
+                outline-color: variables.$main-color;
+            }
+
+            &.active:focus {
+                outline-color: variables.$error-outline;
+            }
+        }
+    }
+
+    &__btn {
+        width: 50%;
+        margin: 0 auto;
+        @media (min-width: 310px) and (max-width: 1000px) {
+            width: 80%;
+        }
+    }
+
+    &__error {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 12px;
+        padding: 5px 10px;
+        color: variables.$error-outline;
+        border: 0.5px solid variables.$error-outline;
+        background-color: variables.$error-color;
+        border-top: none;
+    }
+
+    &__empty_error {
+        margin-bottom: 20px;
+        color: variables.$error-outline
+    }
+}

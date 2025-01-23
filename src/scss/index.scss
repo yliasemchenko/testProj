@@ -1,0 +1,48 @@
+@use './blocks/contacts';
+@use './blocks/modal';
+@use './blocks/_variables.scss';
+@use './blocks/form';
+@use './blocks/button';
+@use './blocks/header';
+@use './blocks/footer';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Montserrat';
+}
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+input {
+    border: 0.5px solid #615f5f;
+    border-radius: 2px;
+
+    &::placeholder {
+        font-size: 12px;
+    }
+
+    &:focus {
+        outline-color: variables.$main-color;
+    }
+
+    &.active:focus {
+        outline-color: variables.$error-outline;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
